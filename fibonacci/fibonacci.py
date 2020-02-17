@@ -1,7 +1,7 @@
 from typing import List
 
 
-def fibonacci(max_value: int) -> List[int]:
+def fibonacci_up_to(max_value: int) -> List[int]:
     """Calculates a Fibonacci sequence up to :param:`max_value`
 
     Args:
@@ -11,10 +11,10 @@ def fibonacci(max_value: int) -> List[int]:
         Fibonacci sequence
 
     Examples:
-        >>> fibonacci(0)
+        >>> fibonacci_up_to(0)
         [0]
 
-        >>> fibonacci(5)
+        >>> fibonacci_up_to(5)
         [0, 1, 1, 2, 3, 5]
     """
     if max_value < 0:
