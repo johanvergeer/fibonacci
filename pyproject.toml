@@ -1,8 +1,30 @@
 [tool.poetry]
 name = "fibonacci"
 version = "0.1.0"
-description = ""
+description = "A Python Fibonacci implementation"
 authors = ["Johan Vergeer <johan.vergeer@ordina.nl>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["fibonacci"]
+repository = "https://github.com/johanvergeer/pelican-xref"
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Education",
+]
+
+[tool.poetry.urls]
+"Source" = "https://github.com/johanvergeer/fibonacci"
+"Tracker" = "https://github.com/johanvergeer/fibonacci/issues"
 
 [tool.poetry.dependencies]
 python = "^3.8"
