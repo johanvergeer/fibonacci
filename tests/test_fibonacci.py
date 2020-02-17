@@ -2,7 +2,19 @@ from typing import List
 
 import pytest
 
-from fibonacci import fibonacci_sequence, fibonacci_up_to
+from fibonacci import fibonacci_sequence, fibonacci_up_to, fibonacci_value
+
+
+def test_fibonacci_value__0():
+    assert fibonacci_value(0) == 0
+
+
+def test_fibonacci_value__1():
+    assert fibonacci_value(1) == 1
+
+
+def test_fibonacci_value__75():
+    assert fibonacci_value(75) == 2111485077978055
 
 
 def test_fibonacci_sequence__values_count_0():

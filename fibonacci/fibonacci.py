@@ -1,4 +1,31 @@
+from math import sqrt
 from typing import List
+
+
+def fibonacci_value(n: int):
+    """Calculates the nth Fibonacci value using `Binet's formula`_
+
+    Args:
+        n: The Fibonacci value to get
+
+    Returns:
+        The nth Fibonacci value
+
+    Examples:
+        >>> fibonacci_value(0)
+        0
+        >>> fibonacci_value(1)
+        1
+        >>> fibonacci_value(4)
+        3
+        >>> fibonacci_value(75)
+        2111485077978055
+
+    .. _Binet's formula: http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibFormula.html
+    """
+    golden = (1 + 5 ** 0.5) / 2  # a.k.a. Phi
+
+    return int((golden ** n - (-(golden - 1)) ** n) / sqrt(5))
 
 
 def fibonacci_sequence(values_count: int) -> List[int]:
