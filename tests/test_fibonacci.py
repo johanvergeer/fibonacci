@@ -2,7 +2,38 @@ from typing import List
 
 import pytest
 
-from fibonacci import fibonacci_up_to
+from fibonacci import fibonacci_sequence, fibonacci_up_to
+
+
+def test_fibonacci_sequence__values_count_0():
+    with pytest.raises(ValueError) as e:
+        fibonacci_sequence(0)
+
+    assert "values_count must be greater than 0" in str(e.value)
+
+
+def test_fibonacci_sequence__values_count__smaller_than_0():
+    with pytest.raises(ValueError) as e:
+        fibonacci_sequence(-1)
+
+    assert "values_count must be greater than 0" in str(e.value)
+
+
+def test_fibonacci_sequence__values_count__1():
+    assert fibonacci_sequence(1) == [0]
+
+
+def test_fibonacci_sequence__values_count__2():
+    assert fibonacci_sequence(2) == [0, 1]
+    assert fibonacci_sequence(1) == [0]
+
+
+def test_fibonacci_sequence__values_count__3():
+    assert fibonacci_sequence(3) == [0, 1, 1]
+
+
+def test_fibonacci_sequence__values_count__4():
+    assert fibonacci_sequence(4) == [0, 1, 1, 2]
 
 
 @pytest.mark.parametrize(
