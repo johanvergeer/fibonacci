@@ -1,4 +1,4 @@
-from math import sqrt
+from decimal import Decimal, getcontext
 from typing import List
 
 
@@ -23,9 +23,14 @@ def fibonacci_value(n: int):
 
     .. _Binet's formula: http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibFormula.html
     """
-    golden = (1 + 5 ** 0.5) / 2  # a.k.a. Phi
+    getcontext().prec = 100
 
-    return int((golden ** n - (-(golden - 1)) ** n) / sqrt(5))
+    golden: Decimal = (Decimal(1) + Decimal(5) ** Decimal(0.5)) / Decimal(
+        2
+    )  # a.k.a. Phi
+    n = Decimal(n)
+
+    return int((golden ** n - (-(golden - Decimal(1))) ** n) / Decimal(5).sqrt())
 
 
 def fibonacci_sequence(values_count: int) -> List[int]:
